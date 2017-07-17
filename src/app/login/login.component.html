@@ -1,0 +1,61 @@
+  <div class="container login-form">
+      
+      <h2 class="login-title">Please login</h2>
+      <div class="panel panel-default">
+		<div class="panel-body">
+
+      
+   
+`<form [formGroup]="loginForm" (ngSubmit)="login()">
+  <div class="input-group login-userinput">
+    <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+  
+   
+  
+  <p *ngIf="loginForm.errors && loginForm.errors.invalidLogin">
+    Username or password is invalid
+  </p>
+<input id="txtUser" type="text" class="form-control" name="username" formControlName="email" placeholder="Username">
+</div>
+  <p>
+ 
+  
+  <p *ngIf="!loginForm.controls.email.valid && loginForm.controls.email.touched">
+    <small *ngIf="loginForm.controls.email.errors.email">
+      email is invalid
+    </small>
+     <small *ngIf="loginForm.controls.email.errors.required">
+      email is required
+    </small>
+    
+  </p>
+  <div class="input-group">
+					<span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+  
+   
+    <input  id="txtPassword" type="password" class="form-control" name="password" placeholder="Password" formControlName="password"/>
+    <span id="showPassword" class="input-group-btn">
+
+  <p *ngIf="!loginForm.controls.password.valid && loginForm.controls.password.touched">
+    
+    Password is required
+  </p>
+  <button class="btn btn-default reveal" type="button"><i class="glyphicon glyphicon-eye-open"></i></button>
+  </span> 
+  </div>
+  <button class="btn btn-primary btn-block login-button" type="submit"><i class="fa fa-sign-in"></i> Login</button>
+				<div class="checkbox login-options">
+					<label><input type="checkbox"/> Remember Me</label>
+					<a href="#" class="login-forgot">Forgot Username/Password?</a>
+				</div>
+        </form>			
+		</div>
+	</div>
+</div>
+
+  
+
+  
+
+
+      
